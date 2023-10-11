@@ -1,0 +1,17 @@
+syntax = "proto3";
+package pb;
+option go_package = "./pb";
+
+service Connect {
+  //  消息投递
+  rpc SendMessage (Message) returns (Empty);
+  rpc BroadcastMessage (Message) returns (Empty);
+}
+
+message Empty{}
+
+message Message {
+  string operationID = 1;           // 操作ID
+  repeated string userIDList = 2;   // 用户列表
+  bytes data = 3;                   // json编码数据，直接下发到客户端，客户端解析处理具体业务
+}

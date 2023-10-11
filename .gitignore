@@ -1,0 +1,15 @@
+.idea
+
+logs
+bin
+config/*.yaml
+
+build_service.sh
+deploy_service.sh
+config/config-*
+config_control.yaml
+test/group/node_modules
+test/kafka/node_modules
+*.zip
+script/*.sh
+docs/*
